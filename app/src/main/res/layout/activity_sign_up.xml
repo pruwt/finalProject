@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/passwordtxt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SignUp">
+
+    <Button
+        android:id="@+id/login2"
+        android:layout_width="259dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="35dp"
+        android:background="@color/forestgreen"
+        android:backgroundTint="@color/white"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+
+    <TextView
+        android:id="@+id/loginname7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="253dp"
+        android:text="Farm Location"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernamesigntxt" />
+
+    <TextView
+        android:id="@+id/loginname8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="284dp"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmlocationtxt" />
+
+    <EditText
+        android:id="@+id/nametxt"
+        android:layout_width="301dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/edittext_drawable"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginname5" />
+
+    <TextView
+        android:id="@+id/loginname6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="284dp"
+        android:text="Username"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nametxt" />
+
+    <EditText
+        android:id="@+id/usernamesigntxt"
+        android:layout_width="301dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/edittext_drawable"
+        android:ems="10"
+        android:hint="Enter Username"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginname6" />
+
+    <EditText
+        android:id="@+id/farmlocationtxt"
+        android:layout_width="301dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/edittext_drawable"
+        android:ems="10"
+        android:hint="Enter Farm location"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginname7" />
+
+    <EditText
+        android:id="@+id/editTextText8"
+        android:layout_width="301dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/edittext_drawable"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="text|textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginname8" />
+
+    <TextView
+        android:id="@+id/loginname5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="312dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_image_view3" />
+
+    <ImageView
+        android:id="@+id/my_image_view3"
+        android:layout_width="145dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="100dp"
+        android:src="@drawable/farmflow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
