@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "710848527752",
+    "project_id": "farmflow-a5ab7",
+    "storage_bucket": "farmflow-a5ab7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710848527752:android:f958f0e85b64c1b7400e3d",
+        "android_client_info": {
+          "package_name": "com.example.finalproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQDZME7t1JRWaSpXHZItguu6LCNkWtBV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710848527752:android:46b290fca5241f19400e3d",
+        "android_client_info": {
+          "package_name": "farm.flow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQDZME7t1JRWaSpXHZItguu6LCNkWtBV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
