@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">finalProject</string>
+    <string name="welcome">Welcome!</string>
+    <string name="check_irrigation_stats">Check out the irrigation stats of your greenhouses</string>
+    <string name="add_greenhouse">ADD GREENHOUSE</string>
+    <string name="profile_icon">Profile Icon</string>
+    <string name="home">Home</string>
+    <string name="greenhouses">Greenhouses</string>
+    <string name="irrigation">Irrigation</string>
+    <string name="logout">Logout</string>
+    <string name="greenhouse_1">Greenhouse 1</string>
+    <string name="greenhouse_2">Greenhouse 2</string>
+    <string name="greenhouse_3">Greenhouse 3</string>
+    <string name="greenhouse_4">Greenhouse 4</string>
+    <string name="greenhouse_1_image">Greenhouse 1</string>
+
 </resources>
