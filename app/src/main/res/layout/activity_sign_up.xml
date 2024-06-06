@@ -9,7 +9,7 @@
     tools:context=".SignUp">
 
     <Button
-        android:id="@+id/login2"
+        android:id="@+id/signupbtn"
         android:layout_width="259dp"
         android:layout_height="58dp"
         android:layout_marginStart="76dp"
@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+        app:layout_constraintTop_toBottomOf="@+id/passtxt" />
 
     <TextView
         android:id="@+id/loginname7"
@@ -38,7 +38,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernamesigntxt" />
+        app:layout_constraintTop_toBottomOf="@+id/emailtxt" />
 
     <TextView
         android:id="@+id/loginname8"
@@ -73,10 +73,10 @@
         android:id="@+id/loginname6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="23dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="284dp"
-        android:text="Username"
+        android:text="Email"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nametxt" />
 
     <EditText
-        android:id="@+id/usernamesigntxt"
+        android:id="@+id/emailtxt"
         android:layout_width="301dp"
         android:layout_height="47dp"
         android:layout_marginStart="55dp"
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginname7" />
 
     <EditText
-        android:id="@+id/editTextText8"
+        android:id="@+id/passtxt"
         android:layout_width="301dp"
         android:layout_height="47dp"
         android:layout_marginStart="55dp"
