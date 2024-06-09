@@ -50,11 +50,11 @@
                 android:layout_marginTop="8dp"
                 android:textColor="@android:color/black" />
 
-            <TextView
-                android:id="@+id/herbNameValueTextView"
+            <EditText
+                android:id="@+id/herbNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Basil"
+                android:hint="Enter herb name"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"
                 android:textColor="@android:color/black" />
@@ -70,12 +70,12 @@
                 android:layout_marginTop="8dp"
                 android:textColor="@android:color/black" />
 
-            <TextView
-                android:id="@+id/soilMoistureValueTextView"
+            <EditText
+                android:id="@+id/soilMoistureEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter soil moisture level"
                 android:layout_marginBottom="8dp"
-                android:text="50%"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -89,11 +89,12 @@
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:textColor="@android:color/black" />
-            <TextView
-                android:id="@+id/locationValueTextView"
+
+            <EditText
+                android:id="@+id/locationEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Greenhouse 1"
+                android:hint="Enter location"
                 android:textSize="16sp"
                 android:layout_marginBottom="16dp"
                 android:textColor="@android:color/black" />
