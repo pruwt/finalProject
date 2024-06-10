@@ -118,27 +118,27 @@
                 android:layout_marginBottom="16dp">
 
                 <Button
-                    android:id="@+id/startButton"
+                    android:id="@+id/insertButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="START"
+                    android:text="INSERT"
                     android:backgroundTint="#124B3D"
                     android:textColor="@android:color/white"
                     android:layout_margin="8dp" />
 
                 <Button
-                    android:id="@+id/stopButton"
+                    android:id="@+id/updateButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="STOP"
+                    android:text="UPDATE"
                     android:backgroundTint="#124B3D"
                     android:textColor="@android:color/white"
                     android:layout_margin="8dp" />
             </LinearLayout>
 
-            <!-- Edit and Delete Buttons -->
+            <!-- View and Delete Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,11 +146,11 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/editButton"
+                    android:id="@+id/viewButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="EDIT"
+                    android:text="VIEW GREENHOUSE"
                     android:backgroundTint="#124B3D"
                     android:textColor="@android:color/white"
                     android:layout_margin="8dp" />
