@@ -3,7 +3,7 @@
     <string name="app_name">FarmFlow</string>
 
     <!-- Welcome Message -->
-    <string name="welcome">Welcome To FarmFlow!</string>
+    <string name="welcome">Welcome To FarmFlow</string>
 
     <!-- Description -->
     <string name="check_irrigation_stats">Check out the irrigation stats of your greenhouses</string>
