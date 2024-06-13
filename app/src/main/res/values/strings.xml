@@ -1,17 +1,37 @@
 <resources>
-    <string name="app_name">finalProject</string>
-    <string name="welcome">Welcome!</string>
+    <!-- App Name -->
+    <string name="app_name">FarmFlow</string>
+
+    <!-- Welcome Message -->
+    <string name="welcome">Welcome To FarmFlow!</string>
+
+    <!-- Description -->
     <string name="check_irrigation_stats">Check out the irrigation stats of your greenhouses</string>
+
+    <!-- Buttons -->
     <string name="add_greenhouse">ADD GREENHOUSE</string>
+    <string name="view_irrigation">VIEW IRRIGATION</string>
+
+    <!-- Footer Navigation -->
     <string name="profile_icon">Profile Icon</string>
     <string name="home">Home</string>
     <string name="greenhouses">Greenhouses</string>
     <string name="irrigation">Irrigation</string>
     <string name="logout">Logout</string>
+
+    <!-- Greenhouse Descriptions -->
     <string name="greenhouse_1">Greenhouse 1</string>
     <string name="greenhouse_2">Greenhouse 2</string>
     <string name="greenhouse_3">Greenhouse 3</string>
     <string name="greenhouse_4">Greenhouse 4</string>
-    <string name="greenhouse_1_image">Greenhouse 1</string>
 
+    <!-- Images -->
+    <string name="greenhouse_1_image">Greenhouse 1</string>
+    <string name="greenhouse_image">Greenhouse Image</string>
+    <string name="irrigation_stats">Irrigation Stats</string>
+    <string name="unnamed1">Unnamed Feature 1</string>
+    <string name="unnamed2">Unnamed Feature 2</string>
+
+    <!-- App Logo -->
+    <string name="app_logo">App Logo</string>
 </resources>
