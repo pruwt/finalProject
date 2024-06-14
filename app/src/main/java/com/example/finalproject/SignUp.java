@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public class SignUp extends AppCompatActivity {
     //
         EditText nametxtsign,farmlocationtxtsign,passtxtsign,emailtxtsign;
         Button signupbtnsign;
+        CheckBox adminRoleCheckBox;
         FirebaseDatabase db;
         DatabaseReference reference;
 
@@ -40,6 +42,7 @@ public class SignUp extends AppCompatActivity {
         passtxtsign = findViewById(R.id.passtxt);
         signupbtnsign = findViewById(R.id.signupbtn);
         emailtxtsign = findViewById(R.id.emailtxt);
+        adminRoleCheckBox = findViewById(R.id.adminRoleCheckBox);
 
         mAuth = FirebaseAuth.getInstance();
        mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -98,6 +101,10 @@ public class SignUp extends AppCompatActivity {
 
     //reg user
     private void registerUser(String name, String email, String password, String farmlocation) {
+
+        boolean isAdmin = adminRoleCheckBox.isChecked(); // Check the state of the checkbox
+        String role = isAdmin ? "admin" : "user"; // Set role based on checkbox state
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
@@ -106,7 +113,7 @@ public class SignUp extends AppCompatActivity {
                         if (user != null) {
                             // Save additional user details in the database
                             String userId = user.getUid();
-                            HelperClass helperClass = new HelperClass(name, email, farmlocation);
+                            HelperClass helperClass = new HelperClass(name, email, farmlocation,role);
                             mDatabase.child("users").child(userId).setValue(helperClass)
                                     .addOnCompleteListener(dbTask -> {
                                         if (dbTask.isSuccessful()) {
@@ -128,15 +135,17 @@ public class SignUp extends AppCompatActivity {
         public String name;
         public String email;
         public String farmlocation;
+        public String role;
 
         public HelperClass() {
             // Default constructor required for calls to DataSnapshot.getValue(HelperClass.class)
         }
 
-        public HelperClass(String name, String email, String farmlocation) {
+        public HelperClass(String name, String email, String farmlocation, String role) {
             this.name = name;
             this.email = email;
             this.farmlocation = farmlocation;
+            this.role = role;
         }
     }
 

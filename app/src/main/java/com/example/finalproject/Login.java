@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
     Button loginbtn;
     TextView signuptextview;
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -35,6 +36,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         signuptextview = findViewById(R.id.signredirect);
         loginnametxt = findViewById(R.id.loginnametxt);
@@ -97,61 +99,59 @@ loginbtn.setOnClickListener(new View.OnClickListener() {
         }
     }
 
-    //check on db if exist
-//    public void checkUser(){
-//        String userdbname = loginnametxt.getText().toString();
-//        String userdbpass = loginpasstxt.getText().toString();
-//
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-//
-//        Query checkUserDB = reference.orderByChild("name").equalTo(userdbname);
-//
-//        checkUserDB.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                if (snapshot.exists()) {
-//                    //user exists{
-//                    loginnametxt.setError(null);
-//                    String passfromdb = snapshot.child(userdbname).child("password").getValue(String.class); //compare value in db
-//
-//                    if (passfromdb.equals(userdbpass)) {
-//                        loginnametxt.setError(null);
-//                        Intent intent = new Intent(Login.this, Home.class);
-//                        startActivity(intent);
-//                    } else {
-//                        loginpasstxt.setError("Invalid login details");
-//                        loginpasstxt.requestFocus(); //highlight
-//                    }
-//
-//                } else {
-//                    //user does not exisiy
-//                    loginnametxt.setError("User does not exist");
-//                    loginnametxt.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//    }
+
 
     private void loginUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        Intent intent = new Intent(Login.this, Home.class);
-                        startActivity(intent);
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(Login.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                       check users role
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            if (user != null) {
+                                checkUserRole(user.getUid()); //check user role and redirect based on that
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(Login.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+//
+//                        Intent intent = new Intent(Login.this, Home.class);
+//                        startActivity(intent);
                     }
                 });
     }
+
+    //check user role function
+    private void checkUserRole(String userId) {
+        mDatabase.child("users").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String role = snapshot.child("role").getValue(String.class); // Fetch the role
+                    if ("admin".equals(role)) {
+                        Intent intent = new Intent(Login.this, AdminHome.class); // Redirect to admin screen
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(Login.this, Home.class); // Redirect to user screen
+                        startActivity(intent);
+                    }
+                } else {
+                    Toast.makeText(Login.this, "User not found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Login.this, "Database error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
+
+
+
 
 //val pass
