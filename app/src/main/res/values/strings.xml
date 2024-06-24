@@ -4,13 +4,18 @@
 
     <!-- Welcome Message -->
     <string name="welcome">Welcome To FarmFlow</string>
+    <string name="welcome_admin">Welcome, Admin!</string>
 
     <!-- Description -->
     <string name="check_irrigation_stats">Check out the irrigation stats of your greenhouses</string>
+    <string name="admin_dashboard">This is your admin dashboard. You can manage farmers, view reports, and more.</string>
 
     <!-- Buttons -->
     <string name="add_greenhouse">ADD GREENHOUSE</string>
     <string name="view_irrigation">VIEW IRRIGATION</string>
+    <string name="delete_farmer">Delete Farmer</string>
+    <string name="view_farmers">View Farmers</string>
+    <string name="add_articles">Add Articles</string>
 
     <!-- Footer Navigation -->
     <string name="profile_icon">Profile Icon</string>
@@ -31,6 +36,9 @@
     <string name="irrigation_stats">Irrigation Stats</string>
     <string name="unnamed1">Unnamed Feature 1</string>
     <string name="unnamed2">Unnamed Feature 2</string>
+    <string name="delete_farmer_image">Delete Farmer Image</string>
+    <string name="view_farmers_image">View Farmers Image</string>
+    <string name="add_article_image">Add Article Image</string>
 
     <!-- App Logo -->
     <string name="app_logo">App Logo</string>
