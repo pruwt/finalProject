@@ -103,28 +103,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center"
                 android:paddingTop="16dp">
 
                 <Button
                     android:id="@+id/addGreenhouseButton"
-                    android:layout_width="0dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="8dp"
+                    android:layout_margin="4dp"
                     android:backgroundTint="#124B3D"
                     android:text="@string/add_greenhouse"
                     android:textColor="@android:color/white" />
 
                 <Button
                     android:id="@+id/viewIrrigationButton"
-                    android:layout_width="0dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="8dp"
+                    android:layout_margin="4dp"
                     android:backgroundTint="#124B3D"
                     android:text="@string/view_irrigation"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/sensorsHomeButton"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="#124B3D"
+                    android:text="ADD SENSORS"
                     android:textColor="@android:color/white" />
             </LinearLayout>
         </LinearLayout>

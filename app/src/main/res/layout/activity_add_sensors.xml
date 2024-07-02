@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AddSensors">
+
+    <!-- Main content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <!-- Image section -->
+        <ImageView
+            android:id="@+id/viewSensorsimage"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:contentDescription="sensor image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sensors" />
+
+        <!--        sensor details-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SENSOR DETAILS"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+<!--            sensor name and info-->
+            <TextView
+                android:id="@+id/sensorsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sensor Name"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/sensorEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Sensor Name"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                />
+
+            <!--Number of Sensor-->
+            <TextView
+                android:id="@+id/numofSensorsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Sensors"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/numofsensorsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Number of Sensors"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                />
+            <!--Condition of Sensor-->
+            <TextView
+                android:id="@+id/conditionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sensor Condition"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/conditionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter condition of sensor"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                />
+<!--            add, delete and view buttons-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+<!--                view button-->
+                <Button
+                    android:id="@+id/addSensorBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#124B3D"
+                    android:text="Add Sensor"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/updateSensorBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#124B3D"
+                    android:text="Update Sensors"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/deleteSensorBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#124B3D"
+                    android:text="Delete Sensor"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
