@@ -8,14 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class Home extends AppCompatActivity {
-    Button addGreenhouseButton, viewIrrigationButton;
+    Button addGreenhouseButton,sensorsHomeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         addGreenhouseButton = findViewById(R.id.addGreenhouseButton);
-        viewIrrigationButton = findViewById(R.id.viewIrrigationButton);
+        sensorsHomeButton = findViewById(R.id.sensorsHomeButton);
+
 
         addGreenhouseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,10 +26,10 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        viewIrrigationButton.setOnClickListener(new View.OnClickListener() {
+        sensorsHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home.this, viewIrrigation.class);
+                Intent intent = new Intent(Home.this,AddSensors.class);
                 startActivity(intent);
             }
         });
