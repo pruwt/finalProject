@@ -19,6 +19,9 @@
             android:name=".LearningResources"
             android:exported="false" />
         <activity
+            android:name=".viewFarmers"
+            android:exported="false" />
+        <activity
             android:name=".AdminHome"
             android:exported="false" />
         <activity
