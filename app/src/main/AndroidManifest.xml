@@ -25,6 +25,12 @@
             android:name=".ViewGreenhousesActivity"
             android:exported="false" />
         <activity
+            android:name=".viewFarmers"
+            android:exported="false" />
+        <activity
+            android:name=".viewIrrigation"
+            android:exported="false" />
+        <activity
             android:name=".addGreenhouse"
             android:exported="false" />
         <activity
