@@ -104,35 +104,36 @@
             <!-- Action Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="285dp"
+                android:layout_height="200dp"
                 android:gravity="center"
+                android:layout_margin="10dp"
                 android:orientation="vertical"
                 android:paddingTop="16dp">
 
                 <Button
                     android:id="@+id/viewUsersbtn"
                     android:layout_width="300dp"
-                    android:layout_height="30dp"
+                    android:layout_height="5dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
                     android:text="VIEW USERS"
                     android:textColor="@android:color/white" />
 
-                <Button
-                    android:id="@+id/articlesbtn"
-                    android:layout_width="300dp"
-                    android:layout_height="27dp"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="#124B3D"
-                    android:text="VIEW ARTCILES"
-                    android:textColor="@android:color/white" />
+<!--                <Button-->
+<!--                    android:id="@+id/articlesbtn"-->
+<!--                    android:layout_width="300dp"-->
+<!--                    android:layout_height="27dp"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="#124B3D"-->
+<!--                    android:text="VIEW ARTCILES"-->
+<!--                    android:textColor="@android:color/white" />-->
 
                 <Button
                     android:id="@+id/sensorsbtn"
                     android:layout_width="300dp"
-                    android:layout_height="26dp"
+                    android:layout_height="5dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
