@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Home extends AppCompatActivity {
-    Button addGreenhouseButton,sensorsHomeButton, viewIrrigationButton;
+    Button addGreenhouseButton,sensorsHomeButton, viewIrrigationButton,articlesHomeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,7 @@ public class Home extends AppCompatActivity {
         addGreenhouseButton = findViewById(R.id.addGreenhouseButton);
         sensorsHomeButton = findViewById(R.id.sensorsHomeButton);
         viewIrrigationButton = findViewById(R.id.viewIrrigationButton);
-
+        articlesHomeButton = findViewById(R.id.articlesHomeButton);
 
         addGreenhouseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +39,13 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this,viewIrrigation.class);
+                startActivity(intent);
+            }
+        });
+        articlesHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,ArticleResource.class);
                 startActivity(intent);
             }
         });
