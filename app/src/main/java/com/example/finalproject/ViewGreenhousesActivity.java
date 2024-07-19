@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.view.ViewGroup;
+
 
 public class ViewGreenhousesActivity extends AppCompatActivity {
 
@@ -28,8 +31,8 @@ public class ViewGreenhousesActivity extends AppCompatActivity {
     private DatabaseReference db;
     private FirebaseAuth mAuth;
     private ListView greenhousesListView;
-    private ArrayAdapter<String> adapter;
-    private List<String> greenhouseList;
+    private GreenhouseAdapter adapter;
+    private List<Greenhouse> greenhouseList;
     private List<String> greenhouseIds;
 
     @Override
@@ -47,7 +50,7 @@ public class ViewGreenhousesActivity extends AppCompatActivity {
         greenhousesListView = findViewById(R.id.greenhousesListView);
         greenhouseList = new ArrayList<>();
         greenhouseIds = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, greenhouseList);
+        adapter = new GreenhouseAdapter();
         greenhousesListView.setAdapter(adapter);
 
         // Fetch and display data
@@ -81,7 +84,7 @@ public class ViewGreenhousesActivity extends AppCompatActivity {
                         String soilMoisture = snapshot.child("soilMoisture").getValue(String.class);
                         String location = snapshot.child("location").getValue(String.class);
                         String id = snapshot.getKey();
-                        greenhouseList.add(herbName + "\nSoil Moisture: " + soilMoisture + "\nLocation: " + location);
+                        greenhouseList.add(new Greenhouse(herbName, soilMoisture, location, id));
                         greenhouseIds.add(id);
                     }
                     adapter.notifyDataSetChanged();
@@ -94,6 +97,64 @@ public class ViewGreenhousesActivity extends AppCompatActivity {
             });
         } else {
             Log.w(TAG, "User not authenticated");
+        }
+    }
+
+    private class GreenhouseAdapter extends ArrayAdapter<Greenhouse> {
+
+        public GreenhouseAdapter() {
+            super(ViewGreenhousesActivity.this, R.layout.list_item, greenhouseList);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = getLayoutInflater().inflate(R.layout.list_item, parent, false);
+            }
+
+            Greenhouse greenhouse = getItem(position);
+
+            TextView herbTextView = convertView.findViewById(R.id.herbTextView);
+            TextView soilMoistureTextView = convertView.findViewById(R.id.soilMoistureTextView);
+            TextView locationTextView = convertView.findViewById(R.id.locationTextView);
+
+            if (greenhouse != null) {
+                herbTextView.setText(greenhouse.getHerbName());
+                soilMoistureTextView.setText("Soil Moisture: " + greenhouse.getSoilMoisture());
+                locationTextView.setText("Location: " + greenhouse.getLocation());
+            }
+
+            return convertView;
+        }
+    }
+
+    private static class Greenhouse {
+        private String herbName;
+        private String soilMoisture;
+        private String location;
+        private String id;
+
+        public Greenhouse(String herbName, String soilMoisture, String location, String id) {
+            this.herbName = herbName;
+            this.soilMoisture = soilMoisture;
+            this.location = location;
+            this.id = id;
+        }
+
+        public String getHerbName() {
+            return herbName;
+        }
+
+        public String getSoilMoisture() {
+            return soilMoisture;
+        }
+
+        public String getLocation() {
+            return location;
+        }
+
+        public String getId() {
+            return id;
         }
     }
 }

@@ -3,9 +3,11 @@ package com.example.finalproject;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +29,8 @@ public class viewIrrigation extends AppCompatActivity {
     private DatabaseReference db;
     private FirebaseAuth mAuth;
     private ListView readingsListView;
-    private ArrayAdapter<String> adapter;
-    private List<String> readingsList;
+    private ReadingsAdapter adapter;
+    private List<Reading> readingsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class viewIrrigation extends AppCompatActivity {
         // Initialize UI elements
         readingsListView = findViewById(R.id.readingsListView); // Ensure this matches the ID in your XML layout
         readingsList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, readingsList);
+        adapter = new ReadingsAdapter();
         readingsListView.setAdapter(adapter);
 
         // Fetch and display data
@@ -72,7 +74,7 @@ public class viewIrrigation extends AppCompatActivity {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         String moisture = snapshot.child("moisture").getValue(String.class);
                         String timestamp = snapshot.child("timestamp").getValue(String.class);
-                        readingsList.add("Timestamp: " + timestamp + "\nMoisture: " + moisture);
+                        readingsList.add(new Reading(timestamp, moisture));
                     }
                     adapter.notifyDataSetChanged();
                 }
@@ -84,6 +86,50 @@ public class viewIrrigation extends AppCompatActivity {
             });
         } else {
             Log.w(TAG, "User not authenticated");
+        }
+    }
+
+    private class ReadingsAdapter extends ArrayAdapter<Reading> {
+
+        public ReadingsAdapter() {
+            super(viewIrrigation.this, R.layout.list_item_reading, readingsList);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = getLayoutInflater().inflate(R.layout.list_item_reading, parent, false);
+            }
+
+            Reading reading = getItem(position);
+
+            TextView timestampTextView = convertView.findViewById(R.id.timestampTextView);
+            TextView moistureTextView = convertView.findViewById(R.id.moistureTextView);
+
+            if (reading != null) {
+                timestampTextView.setText(reading.getTimestamp());
+                moistureTextView.setText("Moisture: " + reading.getMoisture());
+            }
+
+            return convertView;
+        }
+    }
+
+    private static class Reading {
+        private String timestamp;
+        private String moisture;
+
+        public Reading(String timestamp, String moisture) {
+            this.timestamp = timestamp;
+            this.moisture = moisture;
+        }
+
+        public String getTimestamp() {
+            return timestamp;
+        }
+
+        public String getMoisture() {
+            return moisture;
         }
     }
 }

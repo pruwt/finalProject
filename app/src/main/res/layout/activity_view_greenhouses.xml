@@ -51,5 +51,6 @@
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp" />
+        android:paddingBottom="8dp"
+        android:layout_weight="1"/>
 </LinearLayout>

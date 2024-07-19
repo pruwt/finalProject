@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
         <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
             android:name=".ArticleDetailActivity"
             android:exported="false" />
         <activity
@@ -20,9 +23,6 @@
             android:exported="false" />
         <activity
             android:name=".AddSensors"
-            android:exported="false" />
-        <activity
-            android:name=".LearningResources"
             android:exported="false" />
         <activity
             android:name=".viewIrrigation"
@@ -35,12 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".ViewGreenhousesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".viewFarmers"
-            android:exported="false" />
-        <activity
-            android:name=".viewIrrigation"
             android:exported="false" />
         <activity
             android:name=".addGreenhouse"
