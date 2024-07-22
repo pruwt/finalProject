@@ -138,10 +138,19 @@
                     android:id="@+id/deleteSensorBtn"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="4dp"
+                    android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
                     android:text="Delete Sensor"
+                    android:textColor="@android:color/white" />
+                <Button
+                    android:id="@+id/viewSensorsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#124B3D"
+                    android:text="View Sensors"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>

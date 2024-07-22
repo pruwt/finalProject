@@ -59,6 +59,7 @@ public class AddSensors extends AppCompatActivity {
         addSensorBtn = findViewById(R.id.addSensorBtn);
         updateSensorBtn = findViewById(R.id.updateSensorBtn);
         deleteSensorBtn = findViewById(R.id.deleteSensorBtn);
+        viewSensorsBtn = findViewById(R.id.viewSensorsBtn);
 
         addSensorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +76,25 @@ public class AddSensors extends AppCompatActivity {
             }
         });
 
+        updateSensorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectedSensorId != null) {
+                    String sensorName = sensorEditText.getText().toString();
+                    String numOfSensors = numofsensorsEditText.getText().toString();
+                    String sensorCondition = conditionEditText.getText().toString();
+
+                    if (!sensorName.isEmpty() && !numOfSensors.isEmpty() && !sensorCondition.isEmpty()) {
+                        updateSensorData(selectedSensorId, sensorName, numOfSensors, sensorCondition);
+                    } else {
+                        Toast.makeText(AddSensors.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(AddSensors.this, "No sensor selected for update", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         deleteSensorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +105,14 @@ public class AddSensors extends AppCompatActivity {
                 }
             }
 
+        });
+
+        viewSensorsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent intent = new Intent(AddSensors.this, ViewSensorsUsers.class);
+            startActivity(intent);
+            }
         });
     }
     //fetch sensor data
@@ -186,5 +214,35 @@ public class AddSensors extends AppCompatActivity {
     }
 
     //update
+    private void updateSensorData(String sensorId, String sensorName, String numOfSensors, String sensorCondition) {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            String uid = currentUser.getUid();
 
+            // HashMap to store the updated data
+            Map<String, Object> sensor = new HashMap<>();
+            sensor.put("sensorType", sensorName);
+            sensor.put("numOfSensors", numOfSensors);
+            sensor.put("sensorCondition", sensorCondition);
+
+            // Update sensor data
+            db.child(uid).child("sensors").child(sensorId).updateChildren(sensor)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Log.d(TAG, "Data updated successfully");
+                            Toast.makeText(AddSensors.this, "Sensor updated!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error updating data");
+                            Toast.makeText(AddSensors.this, "Failed to update sensor!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
