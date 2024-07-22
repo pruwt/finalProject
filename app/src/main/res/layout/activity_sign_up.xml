@@ -8,21 +8,38 @@
     android:background="@color/white"
     tools:context=".SignUp">
 
+<!--    <Button-->
+<!--        android:id="@+id/signupbtn"-->
+<!--        android:layout_width="259dp"-->
+<!--        android:layout_height="58dp"-->
+<!--        android:layout_marginStart="76dp"-->
+<!--        android:layout_marginTop="38dp"-->
+<!--        android:layout_marginEnd="76dp"-->
+<!--        android:layout_marginBottom="35dp"-->
+<!--        android:background="@color/forestgreen"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:text="Sign Up"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/adminRoleCheckBox" />-->
+
     <Button
         android:id="@+id/signupbtn"
-        android:layout_width="259dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="35dp"
-        android:background="@color/forestgreen"
-        android:backgroundTint="@color/white"
-        android:text="Sign Up"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/forestgreen"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:text="Sign up"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adminRoleCheckBox" />
 
@@ -92,7 +109,7 @@
         android:layout_marginEnd="55dp"
         android:background="@drawable/edittext_drawable"
         android:ems="10"
-        android:hint="Enter Username"
+        android:hint="Enter Email"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,13 +145,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginname8" />
 
+<!--    <TextView-->
+<!--        android:id="@+id/loginname5"-->
+<!--        android:layout_width="36dp"-->
+<!--        android:layout_height="18dp"-->
+<!--        android:layout_marginStart="56dp"-->
+<!--        android:layout_marginTop="76dp"-->
+<!--        android:layout_marginEnd="312dp"-->
+<!--        android:text="Name"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.428"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/my_image_view3" />-->
+
     <TextView
         android:id="@+id/loginname5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="312dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="284dp"
         android:text="Name"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -144,10 +176,10 @@
 
     <ImageView
         android:id="@+id/my_image_view3"
-        android:layout_width="145dp"
-        android:layout_height="106dp"
+        android:layout_width="173dp"
+        android:layout_height="154dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
         android:src="@drawable/farmflow"
         app:layout_constraintEnd_toEndOf="parent"
