@@ -131,7 +131,7 @@
 <!--                    android:textColor="@android:color/white" />-->
 
                 <Button
-                    android:id="@+id/sensorsbtn"
+                    android:id="@+id/sensorsbtnadmin"
                     android:layout_width="300dp"
                     android:layout_height="5dp"
                     android:layout_margin="8dp"
@@ -143,9 +143,11 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Footer -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         android:backgroundTint="#124B3D"
         android:orientation="horizontal"
@@ -155,7 +157,7 @@
         <ImageButton
             android:id="@+id/homeButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/home"
@@ -165,7 +167,7 @@
         <ImageButton
             android:id="@+id/greenhousesButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/greenhouses"
@@ -175,7 +177,7 @@
         <ImageButton
             android:id="@+id/irrigationButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/irrigation"
@@ -185,7 +187,7 @@
         <ImageButton
             android:id="@+id/logoutButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/logout"

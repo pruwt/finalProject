@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/sensorType"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="Sensor Type"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/numOfSensors"
+       android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="No. of Sensors"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/sensorCondition"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="Sensor Condition"
+        android:textSize="18sp" />
+</LinearLayout>

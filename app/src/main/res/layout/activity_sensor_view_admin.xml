@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
     android:padding="16dp"
     android:background="@android:color/white">
 
-    <!-- Header Row -->
+    <!-- header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,39 +20,40 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Farmer name"
-            android:textColor="@android:color/white"
+            android:text="Sensor Name"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:gravity="center" />
+            android:gravity="center"
+            />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Email"
-            android:textColor="@android:color/white"
+            android:text="Number"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:gravity="center" />
+            android:gravity="center"
+            />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Farm Location"
-            android:textColor="@android:color/white"
+            android:text="Condition"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:gravity="center" />
+            android:gravity="center"
+            />
     </LinearLayout>
 
-    <!-- ListView for Table Rows -->
     <ListView
-        android:id="@+id/farmersListView"
+        android:id="@+id/sensorsListViewAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp" />
-
 
 </LinearLayout>

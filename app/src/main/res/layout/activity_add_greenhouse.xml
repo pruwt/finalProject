@@ -101,22 +101,22 @@
                 android:textColor="@android:color/black" />
 
             <!-- Control Irrigation Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Control Irrigation"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@android:color/black" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Control Irrigation"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:textColor="@android:color/black" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="2dp">
 
                 <Button
                     android:id="@+id/insertButton"
@@ -126,7 +126,7 @@
                     android:text="INSERT"
                     android:backgroundTint="#124B3D"
                     android:textColor="@android:color/white"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="4dp" />
 
                 <Button
                     android:id="@+id/updateButton"
@@ -136,7 +136,7 @@
                     android:text="UPDATE"
                     android:backgroundTint="#124B3D"
                     android:textColor="@android:color/white"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="4dp" />
             </LinearLayout>
 
             <!-- View and Delete Buttons -->
@@ -154,7 +154,7 @@
                     android:text="VIEW GREENHOUSE"
                     android:backgroundTint="#124B3D"
                     android:textColor="@android:color/white"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="2dp" />
 
                 <Button
                     android:id="@+id/deleteButton"
@@ -184,7 +184,7 @@
         <ImageButton
             android:id="@+id/homeButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/home"
@@ -194,7 +194,7 @@
         <ImageButton
             android:id="@+id/greenhousesButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/greenhouses"
@@ -204,7 +204,7 @@
         <ImageButton
             android:id="@+id/irrigationButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/irrigation"
@@ -214,7 +214,7 @@
         <ImageButton
             android:id="@+id/logoutButton"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/logout"
