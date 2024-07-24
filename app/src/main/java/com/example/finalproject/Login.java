@@ -49,7 +49,7 @@ loginbtn.setOnClickListener(new View.OnClickListener() {
         String email = loginnametxt.getText().toString();
         String password = loginpasstxt.getText().toString();
 
-        if (validateInput(email, password)) {
+        if (validateInput(email, password) && validatePass()) {
             loginUser(email, password);
         }
     }
@@ -90,7 +90,7 @@ loginbtn.setOnClickListener(new View.OnClickListener() {
         //in our case it's name
         String val = loginpasstxt.getText().toString();
         if(val.isEmpty()){
-            loginpasstxt.setError("Name cannot be empty");
+            loginpasstxt.setError("password cannot be empty");
             return true;
         }
         else {
@@ -101,27 +101,62 @@ loginbtn.setOnClickListener(new View.OnClickListener() {
 
 
 
+//    private void loginUser(String email, String password) {
+//        mAuth.signInWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(this, task -> {
+//                    if (task.isSuccessful()) {
+//                        // Sign in success, update UI with the signed-in user's information
+////                       check users role
+//                        if (task.isSuccessful()) {
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                            if (user != null) {
+//                                checkUserRole(user.getUid()); //check user role and redirect based on that
+//                            } else {
+//                                // If sign in fails, display a message to the user.
+//                                String errorMessage = task.getException().getMessage();
+//
+//                                if (errorMessage.contains("The email address is badly formatted")) {
+//                                    Toast.makeText(Login.this, "Invalid email format", Toast.LENGTH_SHORT).show();
+//                                } else if (errorMessage.contains("There is no user record corresponding to this identifier")) {
+//                                    Toast.makeText(Login.this, "No account found with this email", Toast.LENGTH_SHORT).show();
+//                                } else if (errorMessage.contains("The password is invalid or the user does not have a password")) {
+//                                    Toast.makeText(Login.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+//                                } else {
+//                                    Toast.makeText(Login.this, "Authentication failed: " + errorMessage, Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        }
+////
+////                        Intent intent = new Intent(Login.this, Home.class);
+////                        startActivity(intent);
+//                    }
+//                });
+//    }
+
     private void loginUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
-//                       check users role
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            if (user != null) {
-                                checkUserRole(user.getUid()); //check user role and redirect based on that
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Toast.makeText(Login.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            checkUserRole(user.getUid()); // Check user role and redirect based on that
                         }
-//
-//                        Intent intent = new Intent(Login.this, Home.class);
-//                        startActivity(intent);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        String errorMessage = task.getException().getMessage();
+
+                        // Check for specific error message related to incorrect password
+                        if (errorMessage != null && errorMessage.contains("The password is invalid")) {
+                            Toast.makeText(Login.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, "Authentication failed: " + errorMessage, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
     }
+
+
 
     //check user role function
     private void checkUserRole(String userId) {

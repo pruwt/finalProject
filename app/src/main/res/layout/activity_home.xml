@@ -82,7 +82,8 @@
                             android:layout_height="120dp"
                             android:contentDescription="@string/irrigation_stats"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/greenhouse_image" />
+                            app:srcCompat="@drawable/greenhouse_image"
+                            />
 
                         <Button
                             android:id="@+id/addGreenhouseButton"
@@ -113,7 +114,8 @@
                             android:layout_height="120dp"
                             android:contentDescription="@string/add_greenhouse"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/sensors" />
+                            app:srcCompat="@drawable/sensors"
+                            />
 
                         <Button
                             android:id="@+id/sensorsHomeButton"

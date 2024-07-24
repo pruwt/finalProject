@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,12 +28,15 @@ import java.util.Map;
 public class addGreenhouse extends AppCompatActivity {
 
     private static final String TAG = "addGreenhouse";
+
     private DatabaseReference db;
     private FirebaseAuth mAuth;
 
     private EditText herbNameEditText;
     private EditText soilMoistureEditText;
     private EditText locationEditText;
+
+    ImageButton homeButton,greenhousesButton,irrigationButton,logoutButton; //navbar
     private Button insertButton, updateButton, viewButton, deleteButton;
     private String selectedGreenhouseId = null; // This will store the ID of the selected greenhouse
 
@@ -55,6 +59,9 @@ public class addGreenhouse extends AppCompatActivity {
         updateButton = findViewById(R.id.updateButton);
         viewButton = findViewById(R.id.viewButton);
         deleteButton = findViewById(R.id.deleteButton);
+        homeButton = findViewById(R.id.homeButton);
+        greenhousesButton = findViewById(R.id.greenhousesButton);
+        irrigationButton = findViewById(R.id.irrigationButton);
 
         // Check if there is an intent extra for the selected greenhouse ID
         Intent intent = getIntent();
@@ -118,6 +125,21 @@ public class addGreenhouse extends AppCompatActivity {
                 } else {
                     Toast.makeText(addGreenhouse.this, "No greenhouse selected for deletion", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(addGreenhouse.this, Home.class);
+                startActivity(intent);
+            }
+        });
+        irrigationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(addGreenhouse.this, Dashboard.class);
+                startActivity(intent);
             }
         });
     }

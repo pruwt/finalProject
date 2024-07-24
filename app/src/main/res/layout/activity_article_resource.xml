@@ -13,4 +13,56 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        android:backgroundTint="#124B3D"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:weightSum="4">
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/home"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_home" />
+
+        <ImageButton
+            android:id="@+id/greenhousesButton"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/greenhouses"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_greenhouse" />
+
+        <ImageButton
+            android:id="@+id/irrigationButton"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/irrigation"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_irrigation" />
+
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/logout"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_logout" />
+    </LinearLayout>
+
 </LinearLayout>
