@@ -50,7 +50,7 @@ public class AdminHome extends AppCompatActivity {
         irrigationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminHome.this, AdminHome.class);
+                Intent intent = new Intent(AdminHome.this, viewFarmers.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +58,7 @@ public class AdminHome extends AppCompatActivity {
         greenhousesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminHome.this, AdminHome.class);
+                Intent intent = new Intent(AdminHome.this, ViewSensorsUsers.class);
                 startActivity(intent);
             }
         });

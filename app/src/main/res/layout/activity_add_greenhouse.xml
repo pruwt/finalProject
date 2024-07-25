@@ -173,52 +173,117 @@
     <!-- Footer -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="63dp"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
-        android:backgroundTint="#124B3D"
+        android:backgroundTint="#A1DD22"
         android:orientation="horizontal"
         android:paddingVertical="8dp"
         android:weightSum="4">
 
-        <ImageButton
-            android:id="@+id/homeButton"
+        <!-- Home Button Section -->
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/home"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_home" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/greenhousesButton"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/greenhouses"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_greenhouse" />
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/home"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_home" />
 
-        <ImageButton
-            android:id="@+id/irrigationButton"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/irrigation"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_irrigation" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:textSize="10sp"/>
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/logoutButton"
+        <!-- Greenhouses Button Section -->
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/logout"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_logout" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/greenhousesButton"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/greenhouses"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_greenhouse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Greenhouses"
+                android:textColor="@color/black"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <!-- Irrigation Button Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/irrigationButton"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/irrigation"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_irrigation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Irrigation Details"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Logout Button Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/logout"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_logout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Logout"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </FrameLayout>

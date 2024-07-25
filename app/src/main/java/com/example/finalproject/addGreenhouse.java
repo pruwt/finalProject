@@ -62,6 +62,7 @@ public class addGreenhouse extends AppCompatActivity {
         homeButton = findViewById(R.id.homeButton);
         greenhousesButton = findViewById(R.id.greenhousesButton);
         irrigationButton = findViewById(R.id.irrigationButton);
+        logoutButton = findViewById(R.id.logoutButton);
 
         // Check if there is an intent extra for the selected greenhouse ID
         Intent intent = getIntent();
@@ -139,6 +140,14 @@ public class addGreenhouse extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(addGreenhouse.this, Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(addGreenhouse.this, Login.class);
                 startActivity(intent);
             }
         });
