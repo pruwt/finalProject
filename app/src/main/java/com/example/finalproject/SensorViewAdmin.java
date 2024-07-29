@@ -67,9 +67,9 @@ public class SensorViewAdmin extends AppCompatActivity {
     }
 
     private void fetchSensorsDataDB() {
-        DatabaseReference sensorsRef = db.child("users");
+//        DatabaseReference sensorsRef = db.child("sensors");
 
-        sensorsRef.addValueEventListener(new ValueEventListener() {
+       db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 sensorsList.clear();
