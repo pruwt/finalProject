@@ -117,6 +117,38 @@
                             android:textColor="@android:color/white" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+                <!-- Second Card: Delete farmers -->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_columnWeight="1"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    app:cardCornerRadius="8dp"-->
+<!--                    app:cardElevation="4dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="16dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/deleteFarmers"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="100dp"-->
+<!--                            android:adjustViewBounds="true"-->
+<!--                            android:src="@drawable/farmers_image" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/deleteFarmersButton"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:backgroundTint="#124B3D"-->
+<!--                            android:text="DELETE FARMERS"-->
+<!--                            android:textColor="@android:color/white" />-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
 
                 <!-- Second Card: View Sensors -->
                 <androidx.cardview.widget.CardView

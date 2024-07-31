@@ -47,11 +47,20 @@
     <ListView
         android:id="@+id/farmersListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp" />
 
+    <Button
+        android:id="@+id/deleteFarmersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#124B3D"
+        android:text="DELETE FARMERS"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>
