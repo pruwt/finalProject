@@ -1,9 +1,12 @@
 package com.example.finalproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -21,6 +24,8 @@ public class Dashboard extends Activity {
 
     private TextView MoistureVal, TemperatureVal, HumidityVal;
     private Switch actuatorSwitch;
+    private ImageButton homeButtonIrrigation,greenhousesButtonIrrigation,irrigationButtonIrrigation,logoutButtonIrrigation;
+
     private DatabaseReference databaseReference;
     private DatabaseReference db;
     private FirebaseAuth mAuth;
@@ -45,9 +50,48 @@ public class Dashboard extends Activity {
         MoistureVal = findViewById(R.id.MoistureVal);
         TemperatureVal = findViewById(R.id.TemperatureVal);
         HumidityVal = findViewById(R.id.HumidityVal);
+        homeButtonIrrigation = findViewById(R.id.homeButtonIrrigation);
+        greenhousesButtonIrrigation = findViewById(R.id.greenhousesButtonIrrigation);
+        irrigationButtonIrrigation = findViewById(R.id.irrigationButtonIrrigation);
+        logoutButtonIrrigation = findViewById(R.id.logoutButtonIrrigation);
 
         fetchReadingsData();
         fetchPumpState();
+
+
+        homeButtonIrrigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Home.class);
+                startActivity(intent);
+            }
+        });
+
+        greenhousesButtonIrrigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, addGreenhouse.class);
+                startActivity(intent);
+            }
+        });
+
+        irrigationButtonIrrigation .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutButtonIrrigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Login.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         actuatorSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
