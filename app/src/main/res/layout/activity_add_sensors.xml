@@ -11,11 +11,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="top"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_gravity="top">
 
         <!-- Image section -->
         <ImageView
@@ -26,13 +24,12 @@
             android:scaleType="centerCrop"
             android:src="@drawable/sensors" />
 
-        <!--        sensor details-->
+        <!-- Sensor details -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
 
             <TextView
                 android:id="@+id/textView"
@@ -44,7 +41,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-<!--            sensor name and info-->
+            <!-- Sensor name and info -->
             <TextView
                 android:id="@+id/sensorsTextView"
                 android:layout_width="wrap_content"
@@ -62,10 +59,9 @@
                 android:hint="Enter Sensor Name"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black" />
 
-            <!--Number of Sensor-->
+            <!-- Number of Sensors -->
             <TextView
                 android:id="@+id/numofSensorsTextView"
                 android:layout_width="wrap_content"
@@ -83,9 +79,9 @@
                 android:hint="Enter Number of Sensors"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                />
-            <!--Condition of Sensor-->
+                android:textColor="@color/black" />
+
+            <!-- Condition of Sensor -->
             <TextView
                 android:id="@+id/conditionTextView"
                 android:layout_width="wrap_content"
@@ -103,60 +99,183 @@
                 android:hint="Enter condition of sensor"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                />
-<!--            add, delete and view buttons-->
+                android:textColor="@color/black" />
 
+            <!-- Add, delete and view buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-<!--                view button-->
+                <!-- Add button -->
                 <Button
                     android:id="@+id/addSensorBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="60dp"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
                     android:text="Add Sensor"
                     android:textColor="@android:color/white" />
 
+                <!-- Update button -->
                 <Button
                     android:id="@+id/updateSensorBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
                     android:text="Update Sensors"
                     android:textColor="@android:color/white" />
+            </LinearLayout>
 
+            <!-- Second row of buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Delete button -->
                 <Button
                     android:id="@+id/deleteSensorBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
                     android:text="Delete Sensor"
                     android:textColor="@android:color/white" />
+
+                <!-- View button -->
                 <Button
                     android:id="@+id/viewSensorsBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="#124B3D"
                     android:text="View Sensors"
                     android:textColor="@android:color/white" />
-
             </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        android:backgroundTint="#A1DD22"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:weightSum="4">
 
+        <!-- Home Button Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/homeButtonSensors"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/home"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
         </LinearLayout>
 
+        <!-- Greenhouses Button Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/greenhousesButtonSensors"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/greenhouses"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_greenhouse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Greenhouses"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Irrigation Button Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/irrigationButtonSensors"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/irrigation"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_irrigation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Irrigation Details"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Logout Button Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/logoutButtonSensors"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/logout"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_logout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Logout"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

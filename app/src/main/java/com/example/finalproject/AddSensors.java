@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,6 +30,7 @@ public class AddSensors extends AppCompatActivity {
     private DatabaseReference db;
     private FirebaseAuth mAuth;
     private EditText sensorEditText, numofsensorsEditText, conditionEditText;
+    private ImageButton homeButtonSensors,greenhousesButtonSensors,irrigationButtonSensors,logoutButtonSensors;
     private Button addSensorBtn, viewSensorsBtn, deleteSensorBtn,updateSensorBtn;
     private String selectedSensorId = null; // This will store the ID of the selected sensor
 
@@ -60,6 +62,10 @@ public class AddSensors extends AppCompatActivity {
         updateSensorBtn = findViewById(R.id.updateSensorBtn);
         deleteSensorBtn = findViewById(R.id.deleteSensorBtn);
         viewSensorsBtn = findViewById(R.id.viewSensorsBtn);
+        homeButtonSensors= findViewById(R.id.homeButtonSensors);
+        greenhousesButtonSensors= findViewById(R.id.greenhousesButtonSensors);
+        irrigationButtonSensors= findViewById(R.id.irrigationButtonSensors);
+        logoutButtonSensors= findViewById(R.id.logoutButtonSensors);
 
         addSensorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +118,39 @@ public class AddSensors extends AppCompatActivity {
             public void onClick(View v) {
             Intent intent = new Intent(AddSensors.this, ViewSensorsUsers.class);
             startActivity(intent);
+            }
+        });
+
+        //navbar
+        homeButtonSensors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddSensors.this,Home.class);
+                startActivity(intent);
+            }
+        });
+
+        greenhousesButtonSensors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddSensors.this,addGreenhouse.class);
+                startActivity(intent);
+            }
+        });
+
+        irrigationButtonSensors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddSensors.this,Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutButtonSensors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddSensors.this,Login.class);
+                startActivity(intent);
             }
         });
     }
