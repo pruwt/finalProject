@@ -30,7 +30,7 @@ public class ViewSensorsUsers extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ListView sensorsListView;
     private SensorAdapter adapter;
-//    private ArrayAdapter<String> adapter;
+    //    private ArrayAdapter<String> adapter;
     private List<Sensors> sensorList;
     private List<String> sensorIds;
 
@@ -89,7 +89,7 @@ public class ViewSensorsUsers extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.w(TAG, "Failed to read data", databaseError.toException());
+                    Log.w(TAG, "Failed to read data", databaseError.toException());
                 }
             });
 

@@ -221,10 +221,10 @@
     <LinearLayout
         android:id="@+id/bottomNavigation"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
-        android:backgroundTint="#124B3D"
+        android:backgroundTint="#A1DD22"
         android:orientation="horizontal"
         android:paddingVertical="8dp"
         android:weightSum="4"
